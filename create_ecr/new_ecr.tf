@@ -1,6 +1,5 @@
 module "create-ecr" {
-    source = "github.com/jonspandorf/terraform-modules/tree/main/aws/ecr"
-    my_ecr = "my-test-repo"
+    source = "github.com/jonspandorf/terraform-modules"
 }
 
 output "the-url" {
