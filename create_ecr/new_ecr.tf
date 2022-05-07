@@ -1,5 +1,5 @@
 module "create-ecr" {
-    source ="github.com/jonspandorf/terraform-modules.git"
+    source ="github.com/jonspandorf/terraform-modules//aws//ecr"
     my_ecr = "jenkins-ecr-test"
 }
 
