@@ -5,32 +5,33 @@ variable "ecr_source" {
 
 variable "ECR_REPO" {
   type    = string
-  default = "somerepourlhere"
+  default = "${MY_REPO_LATEST}"
 }
 
 variable "CLUSTER_NAME" {
   type    = string
-  default = "default-cluster-name"
+  default = "mobileye-cluster"
 }
 
 variable "LB_NAME" {
   type    = string
-  default = "lb-default-name"
+  default = "lb-mobileye-project"
 }
 
 variable "PUBLIC_SUBNETS" {
   type    = list(any)
-  default = []
+  default = [  "subnet-02f0da8761cd19675",
+  "subnet-06e25f257cbc0e44a",]
 }
 
 variable "SERIVCE_NAME" {
   type    = string
-  default = "default-service-name"
+  default = "python-http-server"
 }
 
 variable "MY_VPC" {}
 
 variable "TASK_NAME" {
   type    = string
-  default = "default-task-name"
+  default = "HelloMobilEye"
 }

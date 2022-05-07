@@ -1,5 +1,5 @@
 module "create-ecs" {
-  source         = "/home/jon/mobileyeProject/terraform/modules/aws/ecs"
+  source         = "github.com/jonspandorf/terraform-modules//aws//ecs"
   CLUSTER_NAME   = var.CLUSTER_NAME
   LB_NAME        = var.LB_NAME
   MYREPO         = var.ECR_REPO
