@@ -1,8 +1,8 @@
 module "jenkins-instance" {
     source = "/home/jon/mobileyeProject/terraform/modules/aws/instances"
     keyname = "mykey"
-    public_subnet_id = var.public_subnets[0]
-    securitygroup_id = var.securitygroup_id
+    public_subnet_id = var.PUBLIC_SUBNETS[0]
+    securitygroup_id = var.SECURITYGROUP_ID
     remote-exec_commands = [
         "sudo yum -y update",
         "sudo amazon-linux-extras install java-openjdk11 -y",

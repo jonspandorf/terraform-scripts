@@ -2,10 +2,6 @@ variable "PATH_TO_KEY" {
 
 }
 
-variable "AWS_ACCESS_KEY" {
-
-}
-
-variable "AWS_SECRET_KEY" {
-
+variable "VPC_ID" {
+  
 }

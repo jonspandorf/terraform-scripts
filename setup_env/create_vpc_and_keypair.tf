@@ -5,12 +5,12 @@ module "vpc" {
   public_subnets  = ["10.10.10.0/27", "10.10.10.32/27", "10.10.10.64/27", "10.10.10.96/27"]
   private_subnets = ["10.10.10.128/27", "10.10.10.160/27", "10.10.10.192/27", "10.10.10.224/27"]
 }
-output "req-var1" {
+output "vpc_id" {
   value = module.vpc.required-output-vars-projectnetwork-id
 
 }
 
-output "req-var2" {
+output "subnet_ids" {
   value = module.vpc.required-output-vars-subnetid
 }
 
