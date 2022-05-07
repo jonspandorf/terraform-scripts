@@ -1,0 +1,1 @@
+"110828812774.dkr.ecr.us-west-1.amazonaws.com/my-test-repo"
