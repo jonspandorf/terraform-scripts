@@ -1,5 +1,5 @@
 module "create-ecr" {
-    source = var.ecr_source
+    source = "github.com/jonspandorf/terraform-modules/tree/main/aws/ecr"
     my_ecr = "my-test-repo"
 }
 
