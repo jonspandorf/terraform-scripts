@@ -11,3 +11,8 @@ variable "ecr_source" {
     type = string
     default = "/home/jon/mobileyeProject/terraform/modules/aws/ecr"
 }
+
+variable "my_ecr" {
+  type = string 
+  default = "default-ecr"
+}
