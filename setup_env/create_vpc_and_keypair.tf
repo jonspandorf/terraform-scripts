@@ -18,7 +18,7 @@ output "subnet_ids" {
 
 module "keypair" {
   source             = "/home/jon/mobileyeProject/terraform/modules/aws/keypair"
-  keyname            = "mykey"
+  keyname            = "devops-key"
   PATH_TO_PUBLIC_KEY = var.PATH_TO_KEY
 }
 

@@ -1,11 +1,6 @@
-variable "ecr_source" {
-  type    = string
-  default = "/home/jon/mobileyeProject/terraform/modules/aws/ecs"
-}
-
 variable "ECR_REPO" {
-    type = string
-    default = "defaultrepohere"
+  type    = string
+  default = "defaultrepohere"
 }
 
 variable "CLUSTER_NAME" {
@@ -19,9 +14,8 @@ variable "LB_NAME" {
 }
 
 variable "PUBLIC_SUBNETS" {
-  type    = list(any)
+  type = list(any)
   default = [
-      "subnet-0e7a3faa0ceaa6d4b","subnet-0339516e57b0fd3dd"
   ]
 }
 
