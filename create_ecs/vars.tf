@@ -20,8 +20,6 @@ variable "LB_NAME" {
 
 variable "PUBLIC_SUBNETS" {
   type    = list(any)
-  default = [  "subnet-02f0da8761cd19675",
-  "subnet-06e25f257cbc0e44a",]
 }
 
 variable "SERIVCE_NAME" {
