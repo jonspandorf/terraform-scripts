@@ -14,6 +14,6 @@
 
  Provide the vpc_id parameter from the local machine in the UI
 
- Script creates the ecr, create the docker image and push to the repository
+ Script creates the ecr, builds the docker image and push to the created repository
 
  After that, the ECS instantiated and the application is available on port 80 or by using the DNS
