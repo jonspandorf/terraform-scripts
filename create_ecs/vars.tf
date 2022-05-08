@@ -30,3 +30,7 @@ variable "TASK_NAME" {
   type    = string
   default = "HelloMobilEye"
 }
+
+variable "AWS_REGION" {
+  
+}

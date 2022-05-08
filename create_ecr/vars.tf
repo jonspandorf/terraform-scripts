@@ -1,6 +1,6 @@
 
 variable "my_ecr" {
   type    = string
-  default = "default-ecr"
+  default = "mobileye-devops-ecr"
 }
 

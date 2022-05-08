@@ -7,8 +7,8 @@ terraform {
   }
 }
 
-provider "aws" {
-  # region     = "us-west-1"
-  # shared_credentials_files = "/home/ec2-user/.aws/credentials"
-  # profile = "default"
-}
+# provider "aws" {
+#   # region     = "us-west-1"
+#   # shared_credentials_files = "/home/ec2-user/.aws/credentials"
+#   # profile = "default"
+# }
