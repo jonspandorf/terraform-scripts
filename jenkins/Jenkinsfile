@@ -2,12 +2,7 @@ node {
 
     def repo_url
     def vpc_id = 'vpc-0ba34d46c7158158d'
-    def subnets_id = [
-        "subnet-0e7a3faa0ceaa6d4b",
-        "subnet-0339516e57b0fd3dd",
-        "subnet-0fd3da689793c5261",
-        "subnet-0801e51d6b16219ac",
-    ]
+    def subnets_id = ["subnet-0e7a3faa0ceaa6d4b","subnet-0339516e57b0fd3dd","subnet-0fd3da689793c5261","subnet-0801e51d6b16219ac"]
 
     stage('Preparation') {
         dir('scripts') {
@@ -40,7 +35,7 @@ node {
 
         dir('scripts/create_ecs'){
             sh 'sudo terraform init'
-            sh "sudo terraform plan -var='ECR_REPO=${repo_url}' -var='MY_VPC=${vpc_id}' -var='PUBLIC_SUBNETS=${subnets_id}"
+            sh "sudo terraform apply -auto-approve -var='ECR_REPO=${repo_url}'  -var='PUBLIC_SUBNETS=${subnets_id}' -var='MY_VPC=${vpc_id}'"
         }
     }
 }
