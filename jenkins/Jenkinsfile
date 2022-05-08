@@ -1,7 +1,6 @@
 node {
 
     def repo_url
-    def vpc_id = ''
 
     stage('Getting Terraform Scripts') {
         dir('scripts') {
@@ -26,15 +25,15 @@ node {
     }
     stage('Docker Build/Push to ECR') {
         dir('project') {
-            sh "sudo docker build -t ${repo_url}:1 ."
-            sh "sudo docker push ${repo_url}:1"
+            sh "sudo docker build -t ${repo_url}:${env.BUILD_NUMBER} ."
+            sh "sudo docker push ${repo_url}:${env.BUILD_NUMBER}"
         }
     }
     stage('Create ECS') {
 
         dir('scripts/create_ecs'){
             sh 'sudo terraform init'
-            sh "sudo terraform apply -auto-approve -var='ECR_REPO=${repo_url}' -var='MY_VPC=${vpc_id}'"
+            sh "sudo terraform apply -auto-approve -var='ECR_REPO=${repo_url}' -var='MY_VPC=${VPC_ID}'"
         }
     }
 }
