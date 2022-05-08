@@ -17,15 +17,15 @@
  
  Add jenkins user to sudoers file
  
- login to ecr get-login
+ login to `ecr get-login`
 
 # Jenkins
  From Jenkins UI, Install suggested plugins
 
  Connect to Scripts GIT Repository and extract the Jenkinsfile to run the CI script
 
- Provide the vpc_id parameter from the local machine in the UI
+ Selecting Parameterized Build and provide the vpc_id parameter from the local machine in the UI
 
- Terraform creates the ecr, builds the docker image and push to the created repository
+ Terraform creates the ecr, saves the output to a variable, builds and tags the docker image with the variable and pushes it to the created repository
 
- After that, the ECS instantiated and the application is available on port 80 or by using the DNS
+ After that, the ECS is instantiated and the application is available on port 80 or by using the DNS

@@ -35,3 +35,8 @@ variable "AWS_REGION" {
   type = string
   default = "us-west-1"
 }
+
+variable "BUILD_NUMBER" {
+  type = string 
+  default = "1"
+}
