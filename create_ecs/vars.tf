@@ -20,7 +20,7 @@ variable "LB_NAME" {
 
 variable "PUBLIC_SUBNETS" {
   type    = list(any)
-  dfeault = [
+  default = [
       "subnet-0e7a3faa0ceaa6d4b","subnet-0339516e57b0fd3dd"
   ]
 }
