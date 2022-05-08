@@ -19,10 +19,6 @@ module "jenkins-instance" {
     "sudo yum -y install terraform",
     "sudo yum -y install git",
     "git clone https://github.com/jonspandorf/terraform-modules.git",
-    "sudo cat <<EOF > ./terraform-modules/aws/ecs/terraform.tfvars;PUBLIC_SUBNETS=${var.PUBLIC_SUBNETS}\nEOF;",
-    "sudo cat <<EOF > ~/.aws/credentials;\n\n\n[default]\naws_access_key_id=${AWS_ACCESS_KEY}\naws_secret_access_key=${AWS_SECRET_KEY}\nEOF;",
-    "sudo cat <<EOF > ~/.aws/config\n\n\n[default]region=${AWS_REGION}\nEOF;",
-    "sudo `aws ecr get-login --no-include-email`",
     "sudo cat /var/lib/jenkins/secrets/initialAdminPassword"
   ]
 

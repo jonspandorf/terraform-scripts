@@ -4,11 +4,20 @@
  From console - generate Access Key and Secret Key
 
 # Terraform
- Create a Class C VPC with ssh security group and tomcat server UI access 
+ Create a Class C VPC with ssh security group and tomcat server UI access, and a keypair for ssh.
 
- Create A KeyPair access keys to VMs
+ Pass Output VPC ID to security group and public subnets, securitygroup id to instance
 
  Launch an EC2 Amazon Linux instance and install Terraform, Docker and Jenkins
+
+ # CLI remote vm configuration
+ Configure AWS credentials and default region
+ 
+ Copy the public subnets id to a terraform.tfvars
+ 
+ Add jenkins user to sudoers file
+ 
+ login to ecr get-login
 
 # Jenkins
  From Jenkins UI, Install suggested plugins
