@@ -4,8 +4,8 @@ variable "ecr_source" {
 }
 
 variable "ECR_REPO" {
-  type    = string
-  default = "${MY_REPO_LATEST}"
+    type = string
+    default = "defaultrepohere"
 }
 
 variable "CLUSTER_NAME" {
