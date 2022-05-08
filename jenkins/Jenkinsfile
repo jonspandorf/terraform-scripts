@@ -40,7 +40,7 @@ node {
 
         dir('scripts/create_ecs'){
             sh 'sudo terraform init'
-            sh "sudo terraform apply -auto-approve -var='ECR_REPO=${repo_url}' -var='MY_VPC=${vpc_id}' -var='PUBLIC_SUBNETS=${subnets_id}"
+            sh "sudo terraform plan -var='ECR_REPO=${repo_url}' -var='MY_VPC=${vpc_id}' -var='PUBLIC_SUBNETS=${subnets_id}"
         }
     }
 }
