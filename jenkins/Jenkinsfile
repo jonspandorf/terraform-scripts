@@ -1,16 +1,15 @@
 node {
 
     def repo_url
-    def vpc_id = 'vpc-0ba34d46c7158158d'
-    def subnets_id = ["subnet-0e7a3faa0ceaa6d4b","subnet-0339516e57b0fd3dd","subnet-0fd3da689793c5261","subnet-0801e51d6b16219ac"]
+    def vpc_id = ''
 
-    stage('Preparation') {
+    stage('Getting Terraform Scripts') {
         dir('scripts') {
             git url: "https://github.com/jonspandorf/terraform-scripts.git", branch: 'main'
         }
         
     }
-    stage('build ecr') {
+    stage('Creating ECR') {
             dir('scripts/create_ecr') {
                 sh 'echo "CREATING ECR"'
                 sh 'sudo terraform init'
@@ -19,23 +18,23 @@ node {
                 repo_url = readFile('./repo-url.txt').trim()
         }
     }
-        stage('clone project') {
-            dir('project') {
-                sh 'echo "CREATING A DOCKER IMAGE"'
-                git url: "https://github.com/jonspandorf/hello-mobileye.git", branch: 'main'
-            }
+    stage('Creating a Docker image') {
+        dir('project') {
+            sh 'echo "CREATING A DOCKER IMAGE"'
+            git url: "https://github.com/jonspandorf/hello-mobileye.git", branch: 'main'
         }
-        stage('build docker image') {
-            dir('project') {
-                sh "sudo docker build -t ${repo_url}:1 ."
-                sh "sudo docker push ${repo_url}:1"
-            }
+    }
+    stage('Docker Build/Push to ECR') {
+        dir('project') {
+            sh "sudo docker build -t ${repo_url}:1 ."
+            sh "sudo docker push ${repo_url}:1"
         }
-    stage('create ecs') {
+    }
+    stage('Create ECS') {
 
         dir('scripts/create_ecs'){
             sh 'sudo terraform init'
-            sh "sudo terraform apply -auto-approve -var='ECR_REPO=${repo_url}'  -var='PUBLIC_SUBNETS=${subnets_id}' -var='MY_VPC=${vpc_id}'"
+            sh "sudo terraform apply -auto-approve -var='ECR_REPO=${repo_url}' -var='MY_VPC=${vpc_id}'"
         }
     }
 }
