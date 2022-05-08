@@ -1,8 +1,13 @@
 node {
 
     def repo_url
-    def vpc_id = ''
-    def subnets_id = []
+    def vpc_id = 'vpc-0ba34d46c7158158d'
+    def subnets_id = [
+        "subnet-0e7a3faa0ceaa6d4b",
+        "subnet-0339516e57b0fd3dd",
+        "subnet-0fd3da689793c5261",
+        "subnet-0801e51d6b16219ac",
+    ]
 
     stage('Preparation') {
         dir('scripts') {
