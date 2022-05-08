@@ -7,6 +7,7 @@ module "create-ecs" {
   PUBLIC_SUBNETS = var.PUBLIC_SUBNETS
   VPC_ID         = var.MY_VPC
   task-name      = var.TASK_NAME
+  BUILD_NUMBER   = var.BUILD_NUMBER
 }
 
 output "app-url" {
